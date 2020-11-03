@@ -1,5 +1,5 @@
-import Axios from 'axios'
 import React, { useState } from 'react'
+import github from '../api/github'
 import SubmitButton from './SubmitButton'
 
 const Search = ({ history }) => {
@@ -11,9 +11,7 @@ const Search = ({ history }) => {
     e.preventDefault()
     setIsLoading(true)
     try {
-      const { data } = await Axios.get(
-        `https://api.github.com/users/${username}`,
-      )
+      const { data } = await github.get(`/users/${username}`)
       history.push({ pathname: '/user', state: { data } })
     } catch (error) {
       setErr(error)
