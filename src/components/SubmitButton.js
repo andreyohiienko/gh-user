@@ -4,12 +4,12 @@ const SubmitButton = ({ isLoading }) => {
   if (isLoading) {
     return (
       <button
-        class="btn btn-primary d-flex align-items-center"
+        className="btn btn-primary d-flex align-items-center"
         type="button"
         disabled
       >
         <span
-          class="spinner-grow spinner-grow-sm mr-3"
+          className="spinner-grow spinner-grow-sm mr-3"
           role="status"
           aria-hidden="true"
         ></span>
