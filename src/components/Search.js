@@ -1,7 +1,7 @@
 import Axios from 'axios'
 import React, { useState } from 'react'
 
-const Search = () => {
+const Search = ({ history }) => {
   const [username, setUsername] = useState('')
   const [err, setErr] = useState(null)
 
@@ -11,9 +11,9 @@ const Search = () => {
       const { data } = await Axios.get(
         `https://api.github.com/users/${username}`,
       )
+      history.push({ pathname: '/user', state: { data } })
     } catch (error) {
       setErr(error)
-      console.log(error)
     }
   }
 
