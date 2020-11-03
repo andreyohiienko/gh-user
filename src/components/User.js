@@ -1,5 +1,5 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom'
+import BackButton from './BackButton'
 import Details from './Details'
 import ProfileData from './ProfileData'
 
@@ -8,7 +8,6 @@ const User = ({
     state: { data },
   },
 }) => {
-  const history = useHistory()
   const {
     avatar_url,
     login,
@@ -50,12 +49,7 @@ const User = ({
       <div className="container vh-100 d-flex justify-content-center flex-column">
         <div className="row mb-5">
           <div className="col">
-            <button
-              onClick={() => history.goBack()}
-              className="btn btn-secondary"
-            >
-              {'< Back'}
-            </button>
+            <BackButton />
           </div>
         </div>
         <div className="row">
